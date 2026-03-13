@@ -370,6 +370,21 @@ def main() -> None:
             type="primary",
             use_container_width=True,
         )
+           st.markdown(
+        """
+        <div class="neuro-explainer">
+            <strong>Why is this different from pasting a paper into a usual LLM?</strong>
+            <ul>
+                <li><strong>Consistency</strong>; fixed outputs every time: carousel; deep dive; researcher signal.</li>
+                <li><strong>Less prompt work</strong>; the workflow and formatting are built in.</li>
+                <li><strong>Paper handling</strong>; paste an arXiv URL and the app fetches the PDF and extracts text.</li>
+                <li><strong>Opinionated lens</strong>; it is tuned to surface Neurobiological AI Gaps; not generic summary.</li>
+                <li><strong>Reusable drafts</strong>; download buttons make it easy to edit and publish quickly.</li>
+            </ul>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
     if run_btn:
         if not arxiv_url.strip():
             st.error("Please paste a valid arXiv URL.")
@@ -391,21 +406,6 @@ def main() -> None:
             "</div>",
             unsafe_allow_html=True,
         )
-        st.markdown(
-        """
-        <div class="neuro-explainer">
-            <strong>Why is this different from pasting a paper into a usual LLM?</strong>
-            <ul>
-                <li><strong>Consistency</strong>; fixed outputs every time: carousel; deep dive; researcher signal.</li>
-                <li><strong>Less prompt work</strong>; the workflow and formatting are built in.</li>
-                <li><strong>Paper handling</strong>; paste an arXiv URL and the app fetches the PDF and extracts text.</li>
-                <li><strong>Opinionated lens</strong>; it is tuned to surface Neurobiological AI Gaps; not generic summary.</li>
-                <li><strong>Reusable drafts</strong>; download buttons make it easy to edit and publish quickly.</li>
-            </ul>
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
 
         with st.spinner("Downloading PDF and extracting text..."):
             try:
