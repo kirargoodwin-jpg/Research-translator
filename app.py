@@ -355,22 +355,22 @@ def main() -> None:
     )
     st.markdown("")
 
-    # Left-align the search bar under the header
-with st.container():
-    input_col, button_col, _ = st.columns([4, 1, 1])
-    with input_col:
-        arxiv_url = st.text_input(
-            "ArXiv URL",
-            placeholder="https://arxiv.org/abs/2401.12345",
-            label_visibility="collapsed",  # hides label, reduces input height
-        )
-    with button_col:
-        st.markdown("<div style='height:0.35rem'></div>", unsafe_allow_html=True)  # nudge down
-        run_btn = st.button(
-            "Analyse Paper",
-            type="primary",
-            use_container_width=True,
-        )
+      # Left-align the search bar under the header
+    with st.container():
+        input_col, button_col, _ = st.columns([4, 1, 1])
+        with input_col:
+            arxiv_url = st.text_input(
+                "ArXiv URL",
+                placeholder="https://arxiv.org/abs/2401.12345",
+                label_visibility="collapsed",  # hides label, reduces input height
+            )
+        with button_col:
+            st.markdown("<div style='height:0.35rem'></div>", unsafe_allow_html=True)  # nudge down
+            run_btn = st.button(
+                "Analyse Paper",
+                type="primary",
+                use_container_width=True,
+            )
 
     if run_btn:
         if not arxiv_url.strip():
@@ -379,7 +379,6 @@ with st.container():
         if not api_key:
             st.error("Please provide an API key in the sidebar.")
             return
-
         with st.spinner("Fetching paper metadata from arXiv..."):
             try:
                 paper_title, pdf_url = fetch_paper_metadata(arxiv_url)
