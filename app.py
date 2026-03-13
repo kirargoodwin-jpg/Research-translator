@@ -364,14 +364,13 @@ def main() -> None:
                 placeholder="https://arxiv.org/abs/2401.12345",
                 label_visibility="collapsed",  # hides label, reduces input height
             )
-        with button_col:
-            st.markdown("<div style='height:0.35rem'></div>", unsafe_allow_html=True)  # nudge down
-            run_btn = st.button(
-                "Analyse Paper",
-                type="primary",
-                use_container_width=True,
-            )
-
+           with button_col:
+        st.markdown("<div style='height:0.15rem'></div>", unsafe_allow_html=True)  # smaller nudge
+        run_btn = st.button(
+            "Analyse Paper",
+            type="primary",
+            use_container_width=True,
+        )
     if run_btn:
         if not arxiv_url.strip():
             st.error("Please paste a valid arXiv URL.")
