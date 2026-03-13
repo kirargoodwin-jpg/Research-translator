@@ -365,7 +365,7 @@ def main() -> None:
                 label_visibility="collapsed",  # hides label, reduces input height
             )
         with button_col:
-        st.markdown("<div style='height:0.15rem'></div>", unsafe_allow_html=True)  # smaller nudge
+         st.markdown("<div style='height:0.15rem'></div>", unsafe_allow_html=True)  # smaller nudge
         run_btn = st.button(
             "Analyse Paper",
             type="primary",
