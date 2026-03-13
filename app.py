@@ -370,7 +370,7 @@ def main() -> None:
             type="primary",
             use_container_width=True,
         )
-           st.markdown(
+        st.markdown(
         """
         <div class="neuro-explainer">
             <strong>Why is this different from pasting a paper into a usual LLM?</strong>
